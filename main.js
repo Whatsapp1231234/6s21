@@ -106,11 +106,11 @@ const question = (texto) => new Promise((resolver) => rl.question(texto, resolve
 let opcion
 if (!fs.existsSync(`./${authFile}/creds.json`) && !methodCodeQR && !methodCode) {
 while (true) {
-opcion = await question("\n\n✳️ Ingrese el metodo de conexion\n🔺 1 : por QR\n🔺 2 : por CÓDIGO\n\n\n")
+opcion = await question("\n\n✳️ Введите метод подключения\n🔺 1 : por QR\n🔺 2 : por CÓDIGO\n\n\n")
 if (opcion === '1' || opcion === '2') {
 break
 } else {
-console.log("\n\n🔴 Ingrese solo una opción \n\n 1 o 2\n\n" )
+console.log("\n\n🔴 Введите только один вариант \n\n 1 o 2\n\n" )
 }}
 opcion = opcion
 }

@@ -31,14 +31,7 @@ const defaultMenu = {
   before: `
 ◈ ━━━━━ *Senna  ┃ ᴮᴼᵀ* ━━━━━ ◈
  
-👋🏻 Hola! *%name*
-👥 Usuarios : %totalreg
-🟢 Tiempo activo : %muptime
-%sbot
-▢ ADD
-• https://instagram.com/fg98_ff
-
-• https://fgmods.xyz
+👋🏻 Привет! *%name*
 
 ────────────
 %readmore
@@ -163,7 +156,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     m.react('📚') 
     
   } catch (e) {
-    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error', m)
+    conn.reply(m.chat, '❎ Извините, в меню есть ошибка', m)
     throw e
   }
 }
