@@ -6,7 +6,7 @@ export async function all(m) {
     if (!chats.expired)
         return !0
     if (+new Date() > chats.expired) {
-        await this.reply(m.chat, `🔴 Adiós shavales  *${this.user.name}* saldrá del grupo \n\nfinalizo su alquiler`)
+        await this.reply(m.chat, `🔴 Прощай, группа  *${this.user.name}* он выйдет из группы \n\n я завершаю его аренду`)
         await this.groupLeave(m.chat)
         chats.expired = null
     }

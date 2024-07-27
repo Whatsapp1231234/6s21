@@ -23,6 +23,6 @@ let m2 = `
 
 handler.help = ['menu2']
 handler.tags = ['main']
-handler.command = ['menu2', 'audios'] 
+handler.command = ['меню2', 'audios'] 
 
 export default handler
