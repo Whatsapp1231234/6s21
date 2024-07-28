@@ -24,12 +24,12 @@ global.packname = 'Пиздюк┃ᴮᴼᵀ'
 global.author = 'бот' 
 
 //--info FG
-global.botName = 'Senna'
+global.botName = 'pizgyk'
 global.fgig = 'https://instagram.com' 
 global.fgsc = 'https://github.com' 
 global.fgyt = 'https://youtube.com'
 global.fgpyp = 'https://paypal.me'
-global.fglog = 'https://i.ibb.co/1zdz2j3/logo.jpgs' 
+global.fglog = 'https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/b9/44/0a/b9440ad9-f646-a4fc-edc8-4778169a6eac/source/0x0ss-85.png' 
 
 //--- Grupos WA
 global.id_canal = '120363177092661333@newsletter' //-ID de canal de WhatsApp
