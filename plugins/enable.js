@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   let type = (args[0] || '').toLowerCase()
   let isAll = false, isUser = false
   switch (type) {
-    case 'приверствие':
+    case 'приветствие':
     case 'bv':
     case 'bienvenida':
       if (!m.isGroup) {
