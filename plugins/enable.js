@@ -80,7 +80,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
           throw false
         }
       }
-      chat.antiLink2 = isEnable
+      chat.antiLinki = isEnable
       break
       
       case 'captcha':
