@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
        chat.detect = isEnable
      break
     
-    case 'antidelete':
+    case 'антиудаление':
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -64,9 +64,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['self'] = !isEnable
       break
-    case 'antilink':
-    case 'antilinkwa':
-    case 'antilinkwha':
+    case 'антиссылка':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -75,7 +73,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
-      
+    case 'антиссылка2':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLink2 = isEnable
+      break
       
       case 'captcha':
       if (m.isGroup) {
@@ -86,7 +92,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.captcha = isEnable
       break
-      case 'antibotclone':
+      case 'антиклон':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -106,7 +112,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     chat.nsfw = isEnable          
     break
 
-    case 'autolevelup':
+    case 'уровень':
     isUser = true
      user.autolevelup = isEnable
      break
@@ -118,7 +124,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       user.chatbot = isEnable
      break
      
-    case 'restrict':
+    case 'ограничить':
     case 'restringir':
       isAll = true
       if (!isOwner) {
@@ -141,7 +147,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.solopv = isEnable
       break
       
-    case 'gponly':
+    case 'группы':
     case 'onlygp':
     case 'grouponly':
     case 'sologp':
@@ -161,11 +167,11 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ≡ Lista de Opciones
 
 ┌─⊷ *ADMIN*
-▢ captcha
-▢ welcome
-▢ antilink
-▢ detect 
-▢ document
+▢ приветствие
+▢ антиссылка
+▢ антиссылка
+▢ антиссылка 
+▢ антиудаление
 ▢ nsfw
 └───────────── 
 ┌─⊷ *USERS*
