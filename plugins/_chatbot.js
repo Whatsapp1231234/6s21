@@ -18,6 +18,6 @@ if (m.isBaileys && m.fromMe)
   let json = await res.json()
   m.reply(json.message.replace('simsimi', `${botName}`).replace('Simsimi', `${botName}`).replace('sim simi', `${botName}`))
       } catch {
-        m.reply(`❎ La  api de SimSimi se cayo!!\n\nDesactiva chatbot con */off chatbot*`)
+        m.reply(`❎ Я хочу, чтобы ты был рядом!!\п\Пактивировал чат-бота con */off chatbot*`)
       }
 }

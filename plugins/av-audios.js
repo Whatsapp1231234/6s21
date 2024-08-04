@@ -15,6 +15,10 @@ export default handler
 
 let audioMsg = {
   'fino señores': './src/mp3/fino.mp3',
+  'бот': './src/mp3/бот.mp3',
+  'афигеть': './src/mp3/афигеть.mp3',
+  'аууу': './src/mp3/аууу.mp3',
+  'админы': './src/mp3/админы.mp3',
   'buenos días': 'https://k.top4top.io/m_2826iqdri1.mp3',
   'buenas tardes': 'https://b.top4top.io/m_2826v2zg51.mp3',
   'buenas noches': 'https://i.top4top.io/m_2826o8rfj1.mp3',
