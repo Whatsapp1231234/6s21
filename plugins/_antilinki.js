@@ -13,7 +13,7 @@ export async function before(m, {conn, isAdmin, isBotAdmin }) {
         let delet = m.key.participant
         let bang = m.key.id
         const isGroupLink = linkRegex.exec(m.text)
-        if (chat.antiLink2 && isGroupLink && !isAdmin) {
+        if (chat.antiLinki && isGroupLink && !isAdmin) {
         if (isBotAdmin) {
         const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
         const linkThisGroup2 = `https://www.youtube.com/`
