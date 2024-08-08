@@ -1,13 +1,9 @@
-
-let handler = async (m, { conn, isOwner, isAdmin, isROwner }) => {
-    if (!(isAdmin || isOwner)) return dfail('admin', m, conn)
-    global.db.data.chats[m.chat].isBanned = true
-    m.reply(`✅ ${mssg.banChat}`)
+let handler = async (m) => {
+global.db.data.chats[m.chat].isBanned = true
+m.reply('_*[❗ИНФОРМАЦИЯ ❗] Этот чат был успешно заблокирован.*_\n_*—◉ Бот не будет реагировать ни на одну команду, пока этот чат не будет разблокирован.*_')
 }
 handler.help = ['banchat']
 handler.tags = ['owner']
-handler.command = ['banchat', 'chatoff'] 
-handler.group = true
-
+handler.command = /^банчат$/i
+handler.rowner = true
 export default handler
- 

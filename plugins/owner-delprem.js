@@ -1,20 +1,17 @@
-
-let handler = async (m, { conn, usedPrefix, command, text }) => {
-    let who
-    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : false
-    else who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
-    let user = global.db.data.users[who]
-    if (!who) return m.reply(`✳️ ${mssg.noMention}\n\n📌 *${mssg.example}* :\n${usedPrefix + command} @${m.sender.split`@`[0]}`, null, { mentions: [m.sender] })
-    if (!(who in global.db.data.users)) throw `✳️ ${mssg.userDb}`
-    if (user.prem === false) throw `✳️ El Usuario no es Premium`
-    user.prem = false
-    user.premiumTime = 0
-    m.reply(`✅ Premium removido \n\n@${who.split('@')[0]} ya no eres premium`, null, { mentions: [who] })
+let handler = async (m, { conn, text }) => {
+let who
+if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text
+else who = m.chat
+if (!who) throw `_*[❗ИНФОРМАЦИЯ❗] Введите @tag человека, которого вы хотите удалить из списка премиум-пользователей.*_`
+if (!global.prems.includes(who.split`@`[0])) throw '_*[❗ИНФОРМАЦИЯ❗] Введённый пользователь не является премиум-пользователем.*_'
+let index = global.prems.findIndex(v => (v.replace(/[^0-9]/g, '') + '@s.whatsapp.net') === (who.replace(/[^0-9]/g, '') + '@s.whatsapp.net'))
+global.prems.splice(index, 1)
+let textdelprem = `_*[❗ИНФОРМАЦИЯ❗] @${who.split`@`[0]} Теперь он больше не является частью премиум-пользователей.*_`
+m.reply(textdelprem, null, { mentions: conn.parseMention(textdelprem) })
 }
-handler.help = ['delprem @user']
+handler.help = ['delprem <@user>']
 handler.tags = ['owner']
-handler.command = ['delprem', 'delpremium'] 
+handler.command = /^(снять_премиум)$/i
 handler.group = true
 handler.rowner = true
-
 export default handler
